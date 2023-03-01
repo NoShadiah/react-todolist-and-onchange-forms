@@ -14,22 +14,16 @@
 // for my to dolist
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+//import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-// Representin the todo info/ data as an array of objects
-const DATA = [
-  { id: "todo-0", name: "Pray", completed: true },
-  { id: "todo-1", name: "Clean", completed: false },
-  { id: "todo-2", name: "Cook", completed: false }
-]; 
+import reportWebVitals from './reportWebVitals'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
 {/* Adding the DATA array into the app component as tasks */}
-    <App tasks={DATA} />
+    <App />
   </React.StrictMode>
 );
 

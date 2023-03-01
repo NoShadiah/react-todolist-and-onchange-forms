@@ -22,5 +22,5 @@ export function Todo(props) {
         </li>
     );
       
-    console.log(props);
+    // console.log(props);
   }

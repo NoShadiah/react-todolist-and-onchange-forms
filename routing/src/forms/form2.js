@@ -42,7 +42,7 @@ export function MyForm2(){
                 onChange={(e)=>setEmail(e.target.value)}/>
                 </div>
                 <div>
-                    <label>Briefly desribe your work experience</label>
+                    <label>Briefly desribe your work experience:</label>
                     <textarea
                     rows="10"
                     cols="10"

@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState} from "react";
 // Number 1
 export function MyForm(){
     const [name, setName]=useState("");

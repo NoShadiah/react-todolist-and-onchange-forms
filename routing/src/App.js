@@ -1,70 +1,47 @@
 
 import './App.css';
-import { MyForm } from './forms/form1.js';
-import {MyForm2} from './forms/form2.js';
-import {MyForm3} from './forms/form3.js';
-
-// importing the todo function from the todo.js file
-import {Todo} from "./components/Todo";
-// Using component calls <Todo />to replace the list elements in this file
-import {Form} from './components/form'
-import {FilterButton} from './components/filtterbutton';
+import {Greet} from './landing_page/landing'
+import {Forms} from './forms/forms'
+import {List, DATA} from './components/todolist'
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import {Navbar} from './layout/navbar'
+import {NoPage} from './layout/nopage'
 
 
-function App(props) {
-  // The callback component for fetching data from the form to the app
-  function addTask(name){
-    alert(name)
-  }
-  // rETURNING THE TASKS AS A LIST, Rendering the list through iteration and returning the Todo item/component iteself
-  const taskList = props.tasks?.map((task) => <Todo id={task.id} name={task.name} completed={task.completed} key = {task.id}/>);
+
+function App() {
+    function Todo(){
+        return(
+            <List tasks={DATA}/>
+        ) 
+        
+    }
   return (
     <>
-    <div className="todoapp stack-large">
-      <h1>Todo react app</h1>
-      <Form addTask={addTask}/>
-        
-      <div className="filters btn-group stack-exception">
-        <button type="button" className="btn toggle-btn" aria-pressed="true">
-          <span className="visually-hidden">Show </span>
-          <span>all</span>
-          <span className="visually-hidden"> tasks</span>
-        </button>
-        <button type="button" className="btn toggle-btn" aria-pressed="false">
-          <span className="visually-hidden">Show </span>
-          <span>Active</span>
-          <span className="visually-hidden"> tasks</span>
-        </button>
-        <button type="button" className="btn toggle-btn" aria-pressed="false">
-          <span className="visually-hidden">Show </span>
-          <span>Completed</span>
-          <span className="visually-hidden"> tasks</span>
-        </button>
-      </div>
-      <h2 id="list-heading">3 tasks remaining</h2>
-      <ul
-        role="list"
-        className="todo-list stack-large stack-exception"
-        aria-labelledby="list-heading">
-        {taskList}
-      </ul>
-    </div>
-    
-           <MyForm/>
-            <MyForm2/> 
-           <MyForm3/>
+
+        <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Navbar/>}>
+                <Route index element={<Greet/>}/>
+                <Route path='todo'element={<Todo/>}/>
+                <Route path='forms' element={<Forms/>}/>
+                
+                <Route path='*' element={<NoPage/>}/>
+            </Route>
+        </Routes>
+    </BrowserRouter>
     </>
+    
   );
 }
-// function App() {
-//   return (
-//     <>
-//       {/* <MyForm/>
-//        <MyForm2/> */}
-//       <MyForm3/>
-//     </>
-//   );
-// }
+
+{/* <>
+    
+<List tasks={DATA}/>
+<MyForm/>
+ <MyForm2/>
+<MyForm3/>
+</> */}
 
 
 
