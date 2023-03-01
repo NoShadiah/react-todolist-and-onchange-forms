@@ -27,6 +27,7 @@ export function MyForm(){
     }
     return(
         <div id='form1'>
+        <h1>Please provide your data and check the console</h1>
         <form onSubmit={handleSubmit}>
             <div>
             <label>Enter your name: </label>

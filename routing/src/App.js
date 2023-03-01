@@ -10,12 +10,6 @@ import {NoPage} from './layout/nopage'
 
 
 function App() {
-    function Todo(){
-        return(
-            <List tasks={DATA}/>
-        ) 
-        
-    }
   return (
     <>
 
@@ -23,7 +17,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Navbar/>}>
                 <Route index element={<Greet/>}/>
-                <Route path='todo'element={<Todo/>}/>
+                <Route path='todolist'element={<List tasks={DATA}/>}/>
                 <Route path='forms' element={<Forms/>}/>
                 
                 <Route path='*' element={<NoPage/>}/>
