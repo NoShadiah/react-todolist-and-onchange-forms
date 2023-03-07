@@ -22,12 +22,17 @@ export function MyForm(){
     }
     const handleSubmit = (event) =>{
         event.preventDefault();
-        alert('Thank you, we have generated for you a password')
-        console.log("Your password is",name+contact+"!?23%4"+email+"!&")
+        name===""?alert("Please add your name"): 
+        email===""?alert("email is required"): 
+         contact===""?alert('contact is required'):
+         isNaN(contact)? alert("sorry contact must be numbers"):
+        alert('Thank you, check the console for your a password')
+        console.log("Your password is","HSN" + name+"/%^&"+contact+"!?23%4"+email+"!&")
+        
     }
     return(
         <div id='form1'>
-        <h1>Please provide your data and check the console</h1>
+        <h1>Welcome to my password generator</h1>
         <form onSubmit={handleSubmit}>
             <div>
             <label>Enter your name: </label>

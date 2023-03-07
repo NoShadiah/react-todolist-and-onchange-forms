@@ -1,6 +1,8 @@
+
+import './App.css';
 import {Greet} from './landing_page/landing'
 import {Forms} from './forms/forms'
-import {List, DATA} from './todolist/todolist'
+import {List, DATA} from './components/todolist'
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import {Navbar} from './layout/navbar'
 import {NoPage} from './layout/nopage'

@@ -21,7 +21,11 @@ export function MyForm3(){
     }
     const handleSubmit = (event) =>{
         event.preventDefault();
+        name===""?alert("Please add name"): 
+        email===""?alert("email is required"): 
+        option===""?alert('your option is required'):
         console.log("@"+email, "you selected your bg color as", option )
+        
     }
     return(
         <>

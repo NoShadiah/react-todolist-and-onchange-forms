@@ -18,6 +18,9 @@ export function MyForm2(){
 }
     const handleSubmit = (event) =>{
         event.preventDefault();
+        name===""?alert("Name is required"): 
+        email===""?alert("email is required"): 
+        details===""?alert('your details are is required'):
         alert('Thank you for your information, we will get back to you shortly, check the console please')
         console.log(details)
     }
